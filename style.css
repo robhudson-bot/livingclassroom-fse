@@ -3,8 +3,8 @@ Theme Name: Living Classroom FSE
 Theme URI: https://livingclassroom.ca
 Author: Rob Hudson
 Author URI: https://archevi.com
-Description: Full Site Editing block theme for The Living Classroom. Replaces the classic Twenty Sixteen fork with a modern, file-based block theme preserving the original teal brand identity.
-Version: 0.1.0
+Description: Full Site Editing block theme for The Living Classroom. Restores Jasmin's 2024 brand spec (primary teal #007ea6 + secondary gold #bc945b) and modernises the type rhythm of the classic Twenty Sixteen fork.
+Version: 0.2.0
 Requires at least: 6.4
 Tested up to: 6.9
 Requires PHP: 8.0
@@ -13,3 +13,398 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: livingclassroom-fse
 Tags: full-site-editing, block-themes, education, bilingual
 */
+
+/* -------------------------------------------------------------------------
+ * Most styling lives in theme.json. This file only covers what theme.json
+ * cannot express: shortcode output, FAQ accordion details/summary, the
+ * testimonial-list popup grid, AODA focus rings, and a small handful of
+ * tweaks for blocks that need finer control than the editor exposes.
+ * ---------------------------------------------------------------------- */
+
+/* ===== AODA: visible focus rings on everything interactive ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible,
+summary:focus-visible {
+	outline: 2px solid var(--wp--preset--color--primary);
+	outline-offset: 2px;
+}
+
+/* ===== Breadcrumb (rendered by lc_breadcrumb shortcode) ===== */
+.lc-breadcrumb {
+	background: var(--wp--preset--color--primary-10);
+	border-bottom: 1px solid var(--wp--preset--color--primary-20);
+}
+.lc-breadcrumb__inner {
+	max-width: var(--wp--style--global--content-size, 960px);
+	margin: 0 auto;
+	padding: 0.75rem var(--wp--preset--spacing--40);
+	font-size: 0.875rem;
+	color: var(--wp--preset--color--muted);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
+}
+.lc-breadcrumb a {
+	color: var(--wp--preset--color--anchor);
+	text-decoration: none;
+}
+.lc-breadcrumb a:hover,
+.lc-breadcrumb a:focus-visible {
+	color: var(--wp--preset--color--primary);
+	text-decoration: underline;
+}
+.lc-breadcrumb__sep {
+	color: var(--wp--preset--color--primary-40);
+}
+.lc-breadcrumb__current {
+	color: var(--wp--preset--color--anchor);
+	font-weight: 600;
+}
+
+/* ===== Page-hero teal banner ===== */
+.lc-page-hero {
+	text-align: center;
+}
+.lc-page-hero h1 {
+	font-weight: 300;
+	margin: 0;
+}
+
+/* ===== Single post meta line ===== */
+.lc-post-meta {
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-weight: 700;
+}
+.lc-post-meta__sep,
+.lc-news-card__meta p:nth-of-type(2) {
+	color: var(--wp--preset--color--primary-40);
+}
+
+/* ===== News card on archive/index ===== */
+.lc-news-card {
+	transition: background-color 150ms ease-out;
+}
+.lc-news-card:hover {
+	background-color: var(--wp--preset--color--primary-10);
+}
+.lc-news-card h2 a {
+	color: var(--wp--preset--color--anchor);
+	text-decoration: none;
+	transition: color 150ms ease-out;
+}
+.lc-news-card h2 a:hover,
+.lc-news-card h2 a:focus-visible {
+	color: var(--wp--preset--color--primary);
+}
+.lc-news-card .wp-block-post-featured-image img {
+	border-radius: 6px;
+}
+
+/* ===== FAQ accordion (faq-accordion pattern) ===== */
+.lc-faq__item {
+	border: 1px solid var(--wp--preset--color--primary-20);
+	border-radius: 6px;
+	margin-bottom: 0.5rem;
+	background: var(--wp--preset--color--surface);
+	overflow: hidden;
+}
+.lc-faq__item > summary {
+	list-style: none;
+	cursor: pointer;
+	padding: 1rem 1.25rem;
+	font-weight: 700;
+	color: var(--wp--preset--color--anchor);
+	background: var(--wp--preset--color--secondary-10);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+.lc-faq__item > summary::-webkit-details-marker {
+	display: none;
+}
+.lc-faq__item > summary::after {
+	content: "+";
+	color: var(--wp--preset--color--primary);
+	font-size: 1.5rem;
+	line-height: 1;
+	font-weight: 300;
+	transition: transform 200ms ease-out;
+}
+.lc-faq__item[open] > summary::after {
+	transform: rotate(45deg);
+}
+.lc-faq__item > summary:hover,
+.lc-faq__item > summary:focus-visible {
+	background: var(--wp--preset--color--secondary-20);
+}
+.lc-faq__body {
+	padding: 0.5rem 1.25rem 1.25rem;
+	color: var(--wp--preset--color--ink);
+}
+.lc-faq__body > *:last-child {
+	margin-bottom: 0;
+}
+
+/* ===== Building-blocks navigator ([testimonial_list] shortcode) =====
+   Vertical list of all 10 building blocks shown on the single-testimonial
+   template's left sidebar. The popup HTML is rendered but hidden by default
+   (no JS interactivity yet — clicking a row's "Read more" navigates to the
+   single page; the popup is reserved for a future enhancement).
+*/
+.lc-bb {
+	border: 1px solid var(--wp--preset--color--primary-20);
+	border-radius: 8px;
+	padding: var(--wp--preset--spacing--40);
+	background: var(--wp--preset--color--surface);
+}
+.lc-bb__inner {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+.lc-bb__line {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+.lc-bb__box {
+	position: static;
+	background: transparent;
+	border-bottom: 1px solid var(--wp--preset--color--primary-10);
+	transition: background-color 150ms ease-out;
+}
+.lc-bb__box:last-child {
+	border-bottom: none;
+}
+.lc-bb__box.is-active {
+	background: var(--wp--preset--color--secondary-10);
+}
+.lc-bb__box--spacer {
+	display: none;
+}
+.lc-bb__trigger {
+	display: flex;
+	gap: 0.5rem;
+	padding: 0.75rem 0.5rem;
+	color: var(--wp--preset--color--anchor);
+	text-decoration: none;
+	font-size: 0.9375rem;
+	line-height: 1.35;
+}
+.lc-bb__trigger:hover,
+.lc-bb__trigger:focus-visible {
+	background: var(--wp--preset--color--primary-10);
+}
+.lc-bb__num {
+	flex: 0 0 auto;
+	font-weight: 700;
+	color: var(--wp--preset--color--primary);
+	width: 1.5rem;
+}
+.lc-bb__label {
+	flex: 1 1 auto;
+}
+/* Popup hidden by default — opening would require JS we haven't added. */
+.lc-bb__popup {
+	display: none;
+}
+.lc-bb__tagline,
+.lc-bb__intro {
+	text-align: center;
+	color: var(--wp--preset--color--anchor);
+	font-style: italic;
+	font-size: 0.875rem;
+	margin-top: 1rem;
+}
+
+/* ===== [button] shortcode legacy support ===== */
+.lc-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	background: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--surface);
+	padding: 12px 24px;
+	border-radius: 6px;
+	text-decoration: none;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: background-color 150ms ease-out;
+}
+.lc-button:hover,
+.lc-button:focus-visible {
+	background: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--anchor);
+}
+.lc-button__chevron {
+	font-size: 1.2em;
+	line-height: 1;
+}
+
+/* ===== Navigation: mobile open button uses WP's built-in icon ===== */
+.wp-block-navigation__responsive-container-open {
+	color: var(--wp--preset--color--anchor);
+}
+
+/* ===== Testimonial single page ===== */
+.lc-testimonial-hero h2 {
+	margin-top: 0.5rem;
+	opacity: 0.9;
+}
+
+/* ===== Body global ===== */
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+/* ===== Featured image rounded corners ===== */
+.wp-block-post-featured-image img {
+	border-radius: 8px;
+}
+
+/* =========================================================
+ * Pre-footer CTA strip (gold)
+ * ====================================================== */
+.lc-prefooter-cta {
+	border-top: 1px solid rgba(0, 62, 81, 0.06);
+}
+.lc-prefooter-cta h2 {
+	max-width: 720px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.lc-prefooter-cta .wp-block-button__link {
+	padding-left: 32px !important;
+	padding-right: 32px !important;
+}
+/* Outline button override on gold bg */
+.lc-prefooter-cta .wp-block-button.is-style-outline .wp-block-button__link:hover {
+	background: var(--wp--preset--color--anchor);
+	color: var(--wp--preset--color--surface) !important;
+}
+
+/* =========================================================
+ * Main footer
+ * ====================================================== */
+.lc-footer {
+	font-size: 0.9375rem;
+	line-height: 1.55;
+}
+
+.lc-footer .lc-footer__heading {
+	margin: 0 0 1rem !important;
+	color: var(--wp--preset--color--secondary) !important;
+}
+
+.lc-footer .lc-footer__list {
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+.lc-footer .lc-footer__list li {
+	margin: 0;
+	padding: 0.25rem 0;
+	border: 0;
+}
+.lc-footer .lc-footer__list li::before {
+	content: none;
+}
+
+.lc-footer .lc-footer__link {
+	color: var(--wp--preset--color--surface);
+	text-decoration: none;
+	transition: color 120ms ease-out, border-color 120ms ease-out;
+	border-bottom: 1px solid transparent;
+}
+.lc-footer .lc-footer__link:hover,
+.lc-footer .lc-footer__link:focus-visible {
+	color: var(--wp--preset--color--secondary);
+	border-bottom-color: var(--wp--preset--color--secondary);
+	outline: none;
+}
+.lc-footer .lc-footer__link--accent {
+	color: var(--wp--preset--color--secondary);
+	font-weight: 600;
+}
+.lc-footer .lc-footer__link--accent:hover {
+	color: var(--wp--preset--color--surface);
+	border-bottom-color: var(--wp--preset--color--surface);
+}
+
+.lc-footer__col--contact .wp-block-site-logo img {
+	max-width: 160px;
+	height: auto;
+}
+
+/* Social icons in footer — gold on hover */
+.lc-footer .wp-block-social-link:hover {
+	transform: translateY(-1px);
+}
+
+/* Partners row */
+.lc-footer-partners__label {
+	margin: 0 0 0.25rem !important;
+	color: var(--wp--preset--color--secondary) !important;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-weight: 700;
+	font-size: 0.6875rem !important;
+}
+.lc-footer-partners .wp-block-column {
+	padding: 0;
+}
+
+/* Land acknowledgement */
+.lc-footer-land {
+	max-width: 760px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	color: rgba(255, 255, 255, 0.78);
+}
+
+/* Bottom legal row */
+.lc-footer-legal {
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+.lc-footer-legal p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.78);
+}
+.lc-footer-legal .lc-footer__link {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+/* Mobile: stack everything, full-width buttons in pre-footer */
+@media (max-width: 768px) {
+	.lc-prefooter-cta .wp-block-buttons {
+		flex-direction: column;
+		align-items: stretch;
+		width: 100%;
+	}
+	.lc-prefooter-cta .wp-block-button {
+		width: 100%;
+	}
+	.lc-prefooter-cta .wp-block-button__link {
+		width: 100%;
+		text-align: center;
+	}
+	.lc-footer-legal {
+		justify-content: center;
+		text-align: center;
+	}
+	.lc-footer-legal p {
+		flex-basis: 100%;
+	}
+}

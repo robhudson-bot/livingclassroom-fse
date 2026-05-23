@@ -1,14 +1,55 @@
 <!-- wp:template-part {"slug":"header","area":"header"} /-->
 
-<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
-<main class="wp-block-group">
-	<!-- wp:heading {"level":1} -->
-	<h1 class="wp-block-heading">Page Not Found</h1>
+<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"backgroundColor":"primary","textColor":"surface","layout":{"type":"constrained"},"className":"lc-page-hero"} -->
+<section class="wp-block-group lc-page-hero has-surface-color has-primary-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--40)">
+	<!-- wp:heading {"level":1,"textAlign":"center","textColor":"surface"} -->
+	<h1 class="wp-block-heading has-text-align-center has-surface-color has-text-color">Page not found</h1>
 	<!-- /wp:heading -->
-	<!-- wp:paragraph -->
-	<p>The page you are looking for does not exist. Please use the navigation above or return to the <a href="/">homepage</a>.</p>
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70)">
+
+	<!-- wp:paragraph {"fontSize":"lg"} -->
+	<p class="has-lg-font-size">The page you are looking for has moved or no longer exists. Try one of the options below.</p>
 	<!-- /wp:paragraph -->
-	<!-- wp:search {"label":"Search","buttonText":"Search"} /-->
+
+	<!-- wp:heading {"level":2,"style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}}} -->
+	<h2 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--60)">Search the site</h2>
+	<!-- /wp:heading -->
+
+	<!-- wp:search {"label":"","placeholder":"Search Living Classroom","buttonText":"Search","buttonPosition":"button-inside","style":{"border":{"radius":"6px","width":"1px","color":"var:preset|color|primary-40"}}} /-->
+
+	<!-- wp:heading {"level":2,"style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}}} -->
+	<h2 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--60)">Popular pages</h2>
+	<!-- /wp:heading -->
+
+	<!-- wp:list -->
+	<ul class="wp-block-list">
+		<!-- wp:list-item -->
+		<li><a href="/">Home</a></li>
+		<!-- /wp:list-item -->
+		<!-- wp:list-item -->
+		<li><a href="/about-us-2026/">About us</a></li>
+		<!-- /wp:list-item -->
+		<!-- wp:list-item -->
+		<li><a href="/for-ltc-education-partners/">For LTC education partners</a></li>
+		<!-- /wp:list-item -->
+		<!-- wp:list-item -->
+		<li><a href="/for-students/">For students</a></li>
+		<!-- /wp:list-item -->
+		<!-- wp:list-item -->
+		<li><a href="/for-ltc-residents/">For LTC residents</a></li>
+		<!-- /wp:list-item -->
+		<!-- wp:list-item -->
+		<li><a href="/news-and-events/">News and events</a></li>
+		<!-- /wp:list-item -->
+		<!-- wp:list-item -->
+		<li><a href="/contact-us-2/">Contact us</a></li>
+		<!-- /wp:list-item -->
+	</ul>
+	<!-- /wp:list -->
 </main>
 <!-- /wp:group -->
 
