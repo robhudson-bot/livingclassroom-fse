@@ -31,11 +31,13 @@ add_action( 'after_setup_theme', function () {
  * ---------------------------------------------------------------------- */
 
 add_action( 'wp_enqueue_scripts', function () {
+	$style_path = get_stylesheet_directory() . '/style.css';
+	$ver        = file_exists( $style_path ) ? (string) filemtime( $style_path ) : wp_get_theme()->get( 'Version' );
 	wp_enqueue_style(
 		'livingclassroom-fse',
 		get_stylesheet_uri(),
 		array(),
-		wp_get_theme()->get( 'Version' )
+		$ver
 	);
 } );
 
@@ -156,10 +158,10 @@ add_shortcode( 'testimonial_list', function () {
 	}
 
 	$lines = array(
-		array( 'key' => 'first_line_testimonial',  'class' => 'lc-bb__line lc-bb__line--1', 'start' => 10, 'pad_end'   => true ),
-		array( 'key' => 'second_line_testimonial', 'class' => 'lc-bb__line lc-bb__line--2', 'start' => 7,  'pad_start' => true ),
-		array( 'key' => 'third_line_testimonial',  'class' => 'lc-bb__line lc-bb__line--3', 'start' => 4,  'pad_end'   => true ),
-		array( 'key' => 'fourth_line_testimonial', 'class' => 'lc-bb__line lc-bb__line--4', 'start' => 1,  'pad_start' => true ),
+		array( 'key' => 'fourth_line_testimonial', 'class' => 'lc-bb__line lc-bb__line--4', 'start' => 1 ),
+		array( 'key' => 'third_line_testimonial',  'class' => 'lc-bb__line lc-bb__line--3', 'start' => 4 ),
+		array( 'key' => 'second_line_testimonial', 'class' => 'lc-bb__line lc-bb__line--2', 'start' => 7 ),
+		array( 'key' => 'first_line_testimonial',  'class' => 'lc-bb__line lc-bb__line--1', 'start' => 10 ),
 	);
 
 	ob_start();
@@ -215,7 +217,10 @@ add_shortcode( 'testimonial_list', function () {
 		<p class="lc-bb__intro"><?php esc_html_e( 'Unlock the potential. Open the door to the living classroom.', 'livingclassroom-fse' ); ?></p>
 	</div>
 	<?php
-	return ob_get_clean();
+	$html = ob_get_clean();
+	// Strip inter-tag whitespace so wpautop / inline contexts do not insert <br>.
+	$html = preg_replace( '/>\s+</', '><', $html );
+	return $html;
 } );
 
 /* -------------------------------------------------------------------------

@@ -1,6 +1,12 @@
 <!-- wp:template-part {"slug":"header","area":"header"} /-->
 
-<!-- wp:template-part {"slug":"page-hero","area":"uncategorized"} /-->
+<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"backgroundColor":"primary","textColor":"surface","layout":{"type":"constrained"},"className":"lc-page-hero"} -->
+<section class="wp-block-group lc-page-hero has-surface-color has-primary-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--40)">
+	<!-- wp:heading {"level":1,"textAlign":"center","textColor":"surface","style":{"typography":{"fontWeight":"300"}}} -->
+	<h1 class="wp-block-heading has-text-align-center has-surface-color has-text-color" style="font-weight:300">News &amp; Events</h1>
+	<!-- /wp:heading -->
+</section>
+<!-- /wp:group -->
 
 <!-- wp:shortcode -->
 [lc_breadcrumb]
@@ -8,8 +14,6 @@
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70)">
-	<!-- wp:query-title {"type":"archive","level":1} /-->
-
 	<!-- wp:query {"queryId":1,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":true}} -->
 	<div class="wp-block-query">
 		<!-- wp:post-template {"className":"lc-news-list"} -->

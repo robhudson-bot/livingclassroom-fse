@@ -1,11 +1,14 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|30"}}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-surface-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30)">
+
 	<!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap","verticalAlignment":"center"}} -->
 	<div class="wp-block-group">
+
 		<!-- wp:site-logo {"width":220} /-->
 
-		<!-- wp:group {"layout":{"type":"flex","justifyContent":"right","flexWrap":"nowrap"}} -->
+		<!-- wp:group {"layout":{"type":"flex","justifyContent":"right","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 		<div class="wp-block-group">
+
 			<!-- wp:social-links {"iconColor":"ink","iconColorValue":"#003e51","size":"has-small-icon-size","className":"is-style-logos-only"} -->
 			<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">
 				<!-- wp:social-link {"url":"https://www.facebook.com/SchlegelUWRIA/","service":"facebook"} /-->
@@ -13,11 +16,130 @@
 				<!-- wp:social-link {"url":"https://www.linkedin.com/company/schlegel-uw-research-institute-for-aging/","service":"linkedin"} /-->
 			</ul>
 			<!-- /wp:social-links -->
+
+			<!-- wp:html -->
+			<button type="button" class="lc-mobile-toggle" data-lc-mobile-toggle="nav.lc-mega-menu" aria-controls="lc-main-nav" aria-expanded="false" aria-label="Open menu">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+			</button>
+			<!-- /wp:html -->
 		</div>
 		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:navigation {"textColor":"ink","style":{"typography":{"textTransform":"uppercase","fontSize":"1.125rem","fontWeight":"400","letterSpacing":"0.02em"}},"layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"}} /-->
+	<!-- wp:lc/mega-menu -->
+		<!-- wp:lc/mega-menu-item {"label":"Home","url":"/","iconName":"house"} /-->
+
+		<!-- wp:lc/mega-menu-item {"label":"About","url":"/about-us-2026/","iconName":"info"} /-->
+
+		<!-- wp:lc/mega-menu-item {"label":"Living Classrooms","url":"/resources-old/living-classrooms/","iconName":"graduation-cap","hasPanel":true} -->
+			<!-- wp:lc/mega-menu-panel -->
+				<!-- wp:columns {"className":"lc-mega-menu-panel__columns"} -->
+				<div class="wp-block-columns lc-mega-menu-panel__columns">
+					<!-- wp:column -->
+					<div class="wp-block-column">
+						<!-- wp:heading {"level":6,"className":"lc-mega-menu-panel__heading"} -->
+						<h6 class="wp-block-heading lc-mega-menu-panel__heading">Programmes</h6>
+						<!-- /wp:heading -->
+						<!-- wp:list {"className":"lc-mega-menu-panel__list"} -->
+						<ul class="wp-block-list lc-mega-menu-panel__list">
+							<!-- wp:list-item -->
+							<li><a href="/for-students/">PSW Living Classroom</a></li>
+							<!-- /wp:list-item -->
+							<!-- wp:list-item -->
+							<li><a href="/resources-pn/">PN Living Classroom</a></li>
+							<!-- /wp:list-item -->
+							<!-- wp:list-item -->
+							<li><a href="/resources-old/living-classrooms/">About the LC model</a></li>
+							<!-- /wp:list-item -->
+						</ul>
+						<!-- /wp:list -->
+					</div>
+					<!-- /wp:column -->
+
+					<!-- wp:column -->
+					<div class="wp-block-column">
+						<!-- wp:heading {"level":6,"className":"lc-mega-menu-panel__heading"} -->
+						<h6 class="wp-block-heading lc-mega-menu-panel__heading">Resources</h6>
+						<!-- /wp:heading -->
+						<!-- wp:list {"className":"lc-mega-menu-panel__list"} -->
+						<ul class="wp-block-list lc-mega-menu-panel__list">
+							<!-- wp:list-item -->
+							<li><a href="/resources/">Implementation Guide</a></li>
+							<!-- /wp:list-item -->
+							<!-- wp:list-item -->
+							<li><a href="/fund/">Funding & application</a></li>
+							<!-- /wp:list-item -->
+							<!-- wp:list-item -->
+							<li><a href="/living-classroom-map_and_educators/">Map & educator listings</a></li>
+							<!-- /wp:list-item -->
+						</ul>
+						<!-- /wp:list -->
+					</div>
+					<!-- /wp:column -->
+				</div>
+				<!-- /wp:columns -->
+			<!-- /wp:lc/mega-menu-panel -->
+		<!-- /wp:lc/mega-menu-item -->
+
+		<!-- wp:lc/mega-menu-item {"label":"For Partners","url":"/for-ltc-education-partners/","iconName":"handshake","hasPanel":true} -->
+			<!-- wp:lc/mega-menu-panel -->
+				<!-- wp:columns {"className":"lc-mega-menu-panel__columns"} -->
+				<div class="wp-block-columns lc-mega-menu-panel__columns">
+					<!-- wp:column -->
+					<div class="wp-block-column">
+						<!-- wp:heading {"level":6,"className":"lc-mega-menu-panel__heading"} -->
+						<h6 class="wp-block-heading lc-mega-menu-panel__heading">Get started</h6>
+						<!-- /wp:heading -->
+						<!-- wp:list {"className":"lc-mega-menu-panel__list"} -->
+						<ul class="wp-block-list lc-mega-menu-panel__list">
+							<!-- wp:list-item -->
+							<li><a href="/fund-application-info/">Apply for funding</a></li>
+							<!-- /wp:list-item -->
+							<!-- wp:list-item -->
+							<li><a href="/who-can-partner-for-a-lc/">Eligibility & who can partner</a></li>
+							<!-- /wp:list-item -->
+							<!-- wp:list-item -->
+							<li><a href="/benefits-of-the-living-classroom/">Benefits of the LC</a></li>
+							<!-- /wp:list-item -->
+						</ul>
+						<!-- /wp:list -->
+					</div>
+					<!-- /wp:column -->
+
+					<!-- wp:column -->
+					<div class="wp-block-column">
+						<!-- wp:heading {"level":6,"className":"lc-mega-menu-panel__heading"} -->
+						<h6 class="wp-block-heading lc-mega-menu-panel__heading">Learn more</h6>
+						<!-- /wp:heading -->
+						<!-- wp:list {"className":"lc-mega-menu-panel__list"} -->
+						<ul class="wp-block-list lc-mega-menu-panel__list">
+							<!-- wp:list-item -->
+							<li><a href="/partner-testimonials/">Partner testimonials</a></li>
+							<!-- /wp:list-item -->
+							<!-- wp:list-item -->
+							<li><a href="/news-and-events/">News & case studies</a></li>
+							<!-- /wp:list-item -->
+							<!-- wp:list-item -->
+							<li><a href="/contact-us-2/">Contact the team</a></li>
+							<!-- /wp:list-item -->
+						</ul>
+						<!-- /wp:list -->
+					</div>
+					<!-- /wp:column -->
+				</div>
+				<!-- /wp:columns -->
+			<!-- /wp:lc/mega-menu-panel -->
+		<!-- /wp:lc/mega-menu-item -->
+
+		<!-- wp:lc/mega-menu-item {"label":"For Students","url":"/for-students/","iconName":"book-open"} /-->
+
+		<!-- wp:lc/mega-menu-item {"label":"For Residents","url":"/for-ltc-residents/","iconName":"heart"} /-->
+
+		<!-- wp:lc/mega-menu-item {"label":"News","url":"/news-and-events/","iconName":"newspaper"} /-->
+
+		<!-- wp:lc/mega-menu-item {"label":"Contact","url":"/contact-us-2/","iconName":"mail"} /-->
+	<!-- /wp:lc/mega-menu -->
+
 </div>
 <!-- /wp:group -->
