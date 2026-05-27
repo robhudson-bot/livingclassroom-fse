@@ -7,6 +7,7 @@
  * Keywords: hero, header, banner, side image, explainer
  * Block Types: core/columns
  */
+$placeholder = esc_url( get_theme_file_uri( 'assets/img/placeholder-landscape.svg' ) );
 ?>
 <!-- wp:group {"className":"lc-hero-side","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group lc-hero-side" style="margin-bottom:var(--wp--preset--spacing--60);padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
@@ -37,7 +38,7 @@
 		<!-- wp:column {"verticalAlignment":"center","width":"45%","className":"lc-hero-side__media"} -->
 		<div class="wp-block-column is-vertically-aligned-center lc-hero-side__media" style="flex-basis:45%">
 			<!-- wp:image {"sizeSlug":"large","style":{"border":{"radius":"8px"}},"className":"lc-hero-side__image"} -->
-			<figure class="wp-block-image size-large has-custom-border lc-hero-side__image"><img src="" alt="Replace with a description of the image content" style="border-radius:8px"/></figure>
+			<figure class="wp-block-image size-large has-custom-border lc-hero-side__image"><img src="<?php echo $placeholder; ?>" alt="Replace with a description of the image content" style="border-radius:8px"/></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->

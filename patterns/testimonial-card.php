@@ -7,6 +7,7 @@
  * Keywords: testimonial, quote, story, voice, student, partner
  * Block Types: core/group
  */
+$placeholder = esc_url( get_theme_file_uri( 'assets/img/placeholder-square.svg' ) );
 ?>
 <!-- wp:group {"className":"lc-testimonial","backgroundColor":"panel","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|60","right":"var:preset|spacing|60"},"margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}},"border":{"left":{"color":"var:preset|color|secondary","width":"6px","style":"solid"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group lc-testimonial has-panel-background-color has-background" style="border-left-color:var(--wp--preset--color--secondary);border-left-style:solid;border-left-width:6px;margin-top:var(--wp--preset--spacing--60);margin-bottom:var(--wp--preset--spacing--60);padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--60)">
@@ -25,7 +26,7 @@
 		<!-- wp:column {"verticalAlignment":"center","width":"64px","className":"lc-testimonial__avatar-col"} -->
 		<div class="wp-block-column is-vertically-aligned-center lc-testimonial__avatar-col" style="flex-basis:64px">
 			<!-- wp:image {"width":"64px","height":"64px","sizeSlug":"thumbnail","style":{"border":{"radius":"50%"}},"className":"lc-testimonial__avatar"} -->
-			<figure class="wp-block-image size-thumbnail is-resized has-custom-border lc-testimonial__avatar"><img src="" alt="" style="border-radius:50%;width:64px;height:64px;object-fit:cover"/></figure>
+			<figure class="wp-block-image size-thumbnail is-resized has-custom-border lc-testimonial__avatar"><img src="<?php echo $placeholder; ?>" alt="" style="border-radius:50%;width:64px;height:64px;object-fit:cover"/></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->

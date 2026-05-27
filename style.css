@@ -419,7 +419,13 @@ body {
 .lc-feature-grid__card .lc-feature-grid__icon {
 	color: var(--wp--preset--color--primary);
 	margin-bottom: var(--wp--preset--spacing--30);
-	display: block;
+	display: inline-flex;
+	width: fit-content;
+	align-items: center;
+	justify-content: center;
+	background: var(--wp--preset--color--primary-10);
+	padding: 12px;
+	border-radius: 12px;
 }
 .lc-feature-grid__title {
 	margin-top: 0;
@@ -536,10 +542,18 @@ body {
 /* =========================================================================
  * Pattern: livingclassroom/partner-logos
  * ====================================================================== */
+.lc-partner-logos__logo {
+	margin: 0;
+	width: 100%;
+}
 .lc-partner-logos__logo img {
+	width: 100%;
+	max-width: 200px;
+	height: auto;
 	max-height: 80px;
-	width: auto;
+	object-fit: contain;
 	margin: 0 auto;
+	display: block;
 	filter: grayscale(100%);
 	opacity: 0.78;
 	transition: filter 200ms ease-out, opacity 200ms ease-out;
