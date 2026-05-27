@@ -830,6 +830,113 @@ body {
 }
 
 /* =========================================================================
+ * Pattern: livingclassroom/apply-funding-banner
+ * ====================================================================== */
+.lc-apply-banner h2 {
+	margin-top: 0;
+	margin-bottom: var(--wp--preset--spacing--20);
+}
+.lc-apply-banner p:last-of-type {
+	margin-bottom: 0;
+}
+.lc-apply-banner .wp-block-buttons {
+	margin: 0;
+}
+@media (max-width: 781px) {
+	.lc-apply-banner .wp-block-buttons {
+		justify-content: flex-start;
+	}
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/testimonial-spotlight
+ * ====================================================================== */
+.lc-testimonial-spotlight .wp-block-columns {
+	align-items: stretch; /* equal-height cards */
+}
+.lc-testimonial-spotlight__col {
+	display: flex;
+}
+.lc-testimonial-spotlight__card {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.lc-testimonial-spotlight__card p:last-child {
+	margin-bottom: 0;
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/map-with-intro
+ * ====================================================================== */
+.lc-map-intro__map {
+	overflow: hidden;
+}
+.lc-map-intro__map iframe,
+.lc-map-intro__map .cmp-map,
+.lc-map-intro__map .mapp-map {
+	width: 100%;
+	display: block;
+	min-height: 480px;
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/resource-download-card
+ * ====================================================================== */
+.lc-resource-card {
+	transition: box-shadow 200ms ease-out, border-color 200ms ease-out;
+}
+.lc-resource-card:hover,
+.lc-resource-card:focus-within {
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 2px 12px rgba(0, 62, 81, 0.06);
+}
+.lc-resource-card__icon-col {
+	flex-grow: 0;
+}
+.lc-resource-card__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	background: var(--wp--preset--color--primary-10);
+	color: var(--wp--preset--color--primary);
+	border-radius: 8px;
+}
+.lc-resource-card__type {
+	margin: 0;
+}
+.lc-resource-card__body h3 {
+	margin: 0;
+}
+.lc-resource-card__body p:last-child {
+	margin-bottom: 0;
+}
+.lc-resource-card__action {
+	flex-grow: 0;
+}
+@media (max-width: 781px) {
+	.lc-resource-card .wp-block-buttons {
+		justify-content: flex-start;
+	}
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/glossary-term
+ * ====================================================================== */
+.lc-glossary {
+	max-width: 100%;
+}
+.lc-glossary__term {
+	margin: 0;
+}
+.lc-glossary p:last-child {
+	margin-bottom: 0;
+}
+
+/* =========================================================================
  * Reduced-motion respect
  * Every animation/transition above must collapse to instant when the user
  * has expressed a reduced-motion preference.
@@ -841,6 +948,7 @@ body {
 	.lc-featured-news__card,
 	.lc-comparison__details,
 	.lc-comparison__details > summary::after,
+	.lc-resource-card,
 	.lc-button {
 		transition: none !important;
 	}
