@@ -4,8 +4,8 @@
 <!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"backgroundColor":"secondary-10","layout":{"type":"constrained"},"className":"lc-prefooter-cta"} -->
 <section class="wp-block-group lc-prefooter-cta has-secondary-10-background-color has-background" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--40)">
 
-	<!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontWeight":"300","fontSize":"clamp(1.625rem, 3vw + 1rem, 2.25rem)"}},"textColor":"anchor"} -->
-	<h2 class="wp-block-heading has-text-align-center has-anchor-color has-text-color" style="font-size:clamp(1.625rem, 3vw + 1rem, 2.25rem);font-weight:300">Ready to bring the Living Classroom to your community?</h2>
+	<!-- wp:heading {"textAlign":"center","level":2,"textColor":"anchor"} -->
+	<h2 class="wp-block-heading has-text-align-center has-anchor-color has-text-color">Ready to bring the Living Classroom to your community?</h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"align":"center","fontSize":"base","textColor":"anchor","style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|50"}},"typography":{"lineHeight":"1.5"}}} -->
@@ -38,26 +38,28 @@
 		<!-- Contact column (40%) -->
 		<!-- wp:column {"width":"34%","className":"lc-footer__col lc-footer__col--contact"} -->
 		<div class="wp-block-column lc-footer__col lc-footer__col--contact" style="flex-basis:34%">
-			<!-- wp:site-logo {"width":160,"className":"lc-footer__logo"} /-->
+			<!-- wp:image {"width":"160px","sizeSlug":"medium","className":"lc-footer__logo","metadata":{"bindings":{"id":{"source":"livingclassroom/logo","args":{"variant":"footer","field":"id"}},"url":{"source":"livingclassroom/logo","args":{"variant":"footer","field":"url"}},"alt":{"source":"livingclassroom/logo","args":{"variant":"footer","field":"alt"}}}}} -->
+			<figure class="wp-block-image size-medium is-resized lc-footer__logo"><img src="" alt="" style="width:160px"/></figure>
+			<!-- /wp:image -->
 
-			<!-- wp:heading {"level":3,"className":"lc-footer__heading","style":{"typography":{"fontSize":"0.6875rem","letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"},"spacing":{"margin":{"top":"var:preset|spacing|50"}}},"textColor":"secondary"} -->
-			<h3 class="wp-block-heading lc-footer__heading has-secondary-color has-text-color" style="margin-top:var(--wp--preset--spacing--50);font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Contact</h3>
+			<!-- wp:heading {"level":3,"className":"lc-footer__heading","fontSize":"eyebrow","style":{"typography":{"letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"},"spacing":{"margin":{"top":"var:preset|spacing|50"}}},"textColor":"secondary"} -->
+			<h3 class="wp-block-heading lc-footer__heading has-secondary-color has-text-color has-eyebrow-font-size" style="margin-top:var(--wp--preset--spacing--50);font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Contact</h3>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph {"fontSize":"sm","style":{"typography":{"lineHeight":"1.6"}}} -->
-			<p class="has-sm-font-size" style="line-height:1.6">Schlegel-UW Research Institute for Aging<br>250 Laurelwood Drive<br>Waterloo, Ontario&nbsp; N2J 0E2</p>
+			<!-- wp:paragraph {"fontSize":"sm","style":{"typography":{"lineHeight":"1.6"}},"metadata":{"bindings":{"content":{"source":"livingclassroom/option","args":{"key":"brand_address"}}}}} -->
+			<p class="has-sm-font-size" style="line-height:1.6"></p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:paragraph {"fontSize":"sm","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-			<p class="has-sm-font-size" style="margin-top:var(--wp--preset--spacing--30)"><a href="tel:519-904-0660" class="lc-footer__link">519-904-0660</a></p>
+			<!-- wp:paragraph {"fontSize":"sm","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}},"metadata":{"bindings":{"content":{"source":"livingclassroom/tel","args":{"key":"brand_phone"}}}}} -->
+			<p class="has-sm-font-size" style="margin-top:var(--wp--preset--spacing--30)"></p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:paragraph {"fontSize":"sm"} -->
-			<p class="has-sm-font-size"><a href="mailto:livingclassroom@the-ria.ca" class="lc-footer__link lc-footer__link--accent">livingclassroom@the-ria.ca</a></p>
+			<!-- wp:paragraph {"fontSize":"sm","metadata":{"bindings":{"content":{"source":"livingclassroom/mailto","args":{"key":"brand_email","class":"lc-footer__link lc-footer__link--accent"}}}}} -->
+			<p class="has-sm-font-size"></p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:social-links {"iconColor":"surface","iconColorValue":"#ffffff","size":"has-small-icon-size","className":"is-style-logos-only","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-			<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only" style="margin-top:var(--wp--preset--spacing--40)">
+			<!-- wp:social-links {"iconColor":"surface","size":"has-small-icon-size","className":"is-style-logos-only","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
+			<ul class="wp-block-social-links has-small-icon-size has-surface-icon-color has-icon-color is-style-logos-only" style="margin-top:var(--wp--preset--spacing--40)">
 				<!-- wp:social-link {"url":"https://www.facebook.com/SchlegelUWRIA/","service":"facebook"} /-->
 				<!-- wp:social-link {"url":"https://twitter.com/SchlegelUW_RIA","service":"x"} /-->
 				<!-- wp:social-link {"url":"https://www.linkedin.com/company/schlegel-uw-research-institute-for-aging/","service":"linkedin"} /-->
@@ -69,8 +71,8 @@
 		<!-- Partners column (22%) -->
 		<!-- wp:column {"width":"22%","className":"lc-footer__col"} -->
 		<div class="wp-block-column lc-footer__col" style="flex-basis:22%">
-			<!-- wp:heading {"level":3,"className":"lc-footer__heading","style":{"typography":{"fontSize":"0.6875rem","letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"}},"textColor":"secondary"} -->
-			<h3 class="wp-block-heading lc-footer__heading has-secondary-color has-text-color" style="font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">For Partners</h3>
+			<!-- wp:heading {"level":3,"className":"lc-footer__heading","fontSize":"eyebrow","style":{"typography":{"letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"}},"textColor":"secondary"} -->
+			<h3 class="wp-block-heading lc-footer__heading has-secondary-color has-text-color has-eyebrow-font-size" style="font-weight:700;letter-spacing:0.1em;text-transform:uppercase">For Partners</h3>
 			<!-- /wp:heading -->
 
 			<!-- wp:list {"className":"lc-footer__list"} -->
@@ -98,8 +100,8 @@
 		<!-- Students column (22%) -->
 		<!-- wp:column {"width":"22%","className":"lc-footer__col"} -->
 		<div class="wp-block-column lc-footer__col" style="flex-basis:22%">
-			<!-- wp:heading {"level":3,"className":"lc-footer__heading","style":{"typography":{"fontSize":"0.6875rem","letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"}},"textColor":"secondary"} -->
-			<h3 class="wp-block-heading lc-footer__heading has-secondary-color has-text-color" style="font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">For Students</h3>
+			<!-- wp:heading {"level":3,"className":"lc-footer__heading","fontSize":"eyebrow","style":{"typography":{"letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"}},"textColor":"secondary"} -->
+			<h3 class="wp-block-heading lc-footer__heading has-secondary-color has-text-color has-eyebrow-font-size" style="font-weight:700;letter-spacing:0.1em;text-transform:uppercase">For Students</h3>
 			<!-- /wp:heading -->
 
 			<!-- wp:list {"className":"lc-footer__list"} -->
@@ -124,8 +126,8 @@
 		<!-- Residents column (22%) -->
 		<!-- wp:column {"width":"22%","className":"lc-footer__col"} -->
 		<div class="wp-block-column lc-footer__col" style="flex-basis:22%">
-			<!-- wp:heading {"level":3,"className":"lc-footer__heading","style":{"typography":{"fontSize":"0.6875rem","letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"}},"textColor":"secondary"} -->
-			<h3 class="wp-block-heading lc-footer__heading has-secondary-color has-text-color" style="font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">For Residents</h3>
+			<!-- wp:heading {"level":3,"className":"lc-footer__heading","fontSize":"eyebrow","style":{"typography":{"letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"}},"textColor":"secondary"} -->
+			<h3 class="wp-block-heading lc-footer__heading has-secondary-color has-text-color has-eyebrow-font-size" style="font-weight:700;letter-spacing:0.1em;text-transform:uppercase">For Residents</h3>
 			<!-- /wp:heading -->
 
 			<!-- wp:list {"className":"lc-footer__list"} -->
@@ -162,8 +164,8 @@
 			<!-- wp:paragraph {"fontSize":"xs","className":"lc-footer-partners__label"} -->
 			<p class="lc-footer-partners__label has-xs-font-size">Funded by</p>
 			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"fontSize":"sm","style":{"typography":{"fontWeight":"600","lineHeight":"1.4"}}} -->
-			<p class="has-sm-font-size" style="font-weight:600;line-height:1.4"><a href="https://www.ontario.ca/page/ministry-long-term-care" class="lc-footer__link" target="_blank" rel="noopener">Ontario Ministry of Long-Term Care</a></p>
+			<!-- wp:paragraph {"fontSize":"sm","style":{"typography":{"fontWeight":"600","lineHeight":"1.4"}},"metadata":{"bindings":{"content":{"source":"livingclassroom/link","args":{"label_key":"brand_partner_funded_label","url_key":"brand_partner_funded_url","class":"lc-footer__link","external":true}}}}} -->
+			<p class="has-sm-font-size" style="font-weight:600;line-height:1.4"></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
@@ -173,8 +175,8 @@
 			<!-- wp:paragraph {"fontSize":"xs","className":"lc-footer-partners__label"} -->
 			<p class="lc-footer-partners__label has-xs-font-size">Led by</p>
 			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"fontSize":"sm","style":{"typography":{"fontWeight":"600","lineHeight":"1.4"}}} -->
-			<p class="has-sm-font-size" style="font-weight:600;line-height:1.4"><a href="https://the-ria.ca/" class="lc-footer__link" target="_blank" rel="noopener">Schlegel-UW Research Institute for Aging (RIA)</a></p>
+			<!-- wp:paragraph {"fontSize":"sm","style":{"typography":{"fontWeight":"600","lineHeight":"1.4"}},"metadata":{"bindings":{"content":{"source":"livingclassroom/link","args":{"label_key":"brand_partner_led_label","url_key":"brand_partner_led_url","class":"lc-footer__link","external":true}}}}} -->
+			<p class="has-sm-font-size" style="font-weight:600;line-height:1.4"></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
@@ -184,8 +186,8 @@
 			<!-- wp:paragraph {"fontSize":"xs","className":"lc-footer-partners__label"} -->
 			<p class="lc-footer-partners__label has-xs-font-size">In partnership with</p>
 			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"fontSize":"sm","style":{"typography":{"fontWeight":"600","lineHeight":"1.4"}}} -->
-			<p class="has-sm-font-size" style="font-weight:600;line-height:1.4"><a href="https://cesba.com/" class="lc-footer__link" target="_blank" rel="noopener">CESBA — Adult & Continuing Education School Board Administrators</a></p>
+			<!-- wp:paragraph {"fontSize":"sm","style":{"typography":{"fontWeight":"600","lineHeight":"1.4"}},"metadata":{"bindings":{"content":{"source":"livingclassroom/link","args":{"label_key":"brand_partner_with_label","url_key":"brand_partner_with_url","class":"lc-footer__link","external":true}}}}} -->
+			<p class="has-sm-font-size" style="font-weight:600;line-height:1.4"></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
@@ -198,8 +200,8 @@
 	<!-- /wp:separator -->
 
 	<!-- Land acknowledgement -->
-	<!-- wp:paragraph {"align":"center","fontSize":"xs","style":{"typography":{"fontStyle":"italic","lineHeight":"1.6"},"spacing":{"padding":{"left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"className":"lc-footer-land"} -->
-	<p class="lc-footer-land has-text-align-center has-xs-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40);font-style:italic;line-height:1.6">The Living Classroom programme is delivered across the traditional, ancestral, and treaty lands of Indigenous peoples throughout Ontario. We acknowledge the Anishinaabe, Haudenosaunee, and Attawandaron (Neutral) peoples on whose territory the RIA is located, and we commit to learning from Indigenous ways of knowing in long-term care.</p>
+	<!-- wp:paragraph {"align":"center","fontSize":"xs","style":{"typography":{"fontStyle":"italic","lineHeight":"1.6"},"spacing":{"padding":{"left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"className":"lc-footer-land","metadata":{"bindings":{"content":{"source":"livingclassroom/option","args":{"key":"brand_land_acknowledgement"}}}}} -->
+	<p class="lc-footer-land has-text-align-center has-xs-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40);font-style:italic;line-height:1.6"></p>
 	<!-- /wp:paragraph -->
 
 	<!-- Separator -->
@@ -210,8 +212,8 @@
 	<!-- Bottom legal row -->
 	<!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"},"className":"lc-footer-legal"} -->
 	<div class="wp-block-group lc-footer-legal">
-		<!-- wp:paragraph {"fontSize":"xs"} -->
-		<p class="has-xs-font-size">&copy; [lc_year] Schlegel-UW Research Institute for Aging. All rights reserved.</p>
+		<!-- wp:paragraph {"fontSize":"xs","metadata":{"bindings":{"content":{"source":"livingclassroom/copyright"}}}} -->
+		<p class="has-xs-font-size"></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:paragraph {"fontSize":"xs"} -->
