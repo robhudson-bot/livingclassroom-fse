@@ -445,10 +445,32 @@ body {
 /* =========================================================================
  * Pattern: livingclassroom/process-steps
  * ====================================================================== */
+.lc-process-steps .wp-block-columns {
+	position: relative;
+}
+/* Single continuous connector line from circle 1's centre to circle 4's
+ * centre, drawn behind the circles. The 1.25rem insets match the circle
+ * radius so the line begins exactly at the centre of the first circle and
+ * ends at the centre of the last. */
+@media (min-width: 782px) {
+	.lc-process-steps .wp-block-columns::before {
+		content: "";
+		position: absolute;
+		top: 1.25rem;
+		left: 1.25rem;
+		right: 1.25rem;
+		height: 2px;
+		background: var(--wp--preset--color--secondary-40);
+		z-index: 0;
+		pointer-events: none;
+	}
+}
 .lc-process-steps__step {
 	position: relative;
 }
 .lc-process-steps__num {
+	position: relative;
+	z-index: 1;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -467,21 +489,6 @@ body {
 .lc-process-steps__title {
 	margin-top: 0;
 	margin-bottom: var(--wp--preset--spacing--20);
-}
-/* Subtle horizontal connector between steps on desktop */
-@media (min-width: 782px) {
-	.lc-process-steps .wp-block-column + .wp-block-column .lc-process-steps__num::before {
-		content: "";
-		position: absolute;
-		top: 1.25rem; /* centerline of 2.5rem circle */
-		left: calc(-1 * var(--wp--preset--spacing--50));
-		width: var(--wp--preset--spacing--50);
-		height: 2px;
-		background: var(--wp--preset--color--secondary-40);
-	}
-	.lc-process-steps__step {
-		/* allow the connector pseudo to extend outside the column padding */
-	}
 }
 
 /* Screen-reader-only utility (used by process-steps for "Step N of 4:") */
@@ -605,9 +612,16 @@ body {
 
 /* =========================================================================
  * Pattern: livingclassroom/comparison-sections
+ *
+ * Each disclosure panel sizes to its own content — collapsed PN must NOT
+ * stretch to match an expanded PSW. Override the default flex stretch on
+ * wp-block-columns to flex-start so panels are independent.
  * ====================================================================== */
+.lc-comparison .wp-block-columns {
+	align-items: flex-start;
+}
 .lc-comparison__column {
-	display: flex;
+	display: block;
 }
 .lc-comparison__details {
 	width: 100%;
