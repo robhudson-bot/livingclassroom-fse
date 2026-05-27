@@ -716,6 +716,106 @@ body {
 }
 
 /* =========================================================================
+ * Pattern: livingclassroom/media-text-alternating
+ * ====================================================================== */
+.lc-media-text-alt__row {
+	margin-bottom: 0;
+}
+.lc-media-text-alt__row .wp-block-media-text__media img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 8px;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+}
+.lc-media-text-alt__row .wp-block-media-text__content {
+	padding: 0 var(--wp--preset--spacing--40);
+}
+.lc-media-text-alt__row h2 {
+	margin-top: 0;
+}
+@media (max-width: 781px) {
+	.lc-media-text-alt__row .wp-block-media-text__content {
+		padding: var(--wp--preset--spacing--40) 0 0 0;
+	}
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/featured-news-strip
+ *
+ * Layout: first post = large hero (2 grid rows tall, left column);
+ * remaining 2 posts = stacked smaller cards (right column).
+ * ====================================================================== */
+.lc-featured-news .wp-block-post-template {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-auto-rows: 1fr;
+	gap: var(--wp--preset--spacing--40);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.lc-featured-news .wp-block-post-template > li:first-child {
+	grid-row: span 2;
+}
+.lc-featured-news__card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	transition: box-shadow 200ms ease-out, transform 200ms ease-out;
+}
+.lc-featured-news__card:hover,
+.lc-featured-news__card:focus-within {
+	box-shadow: 0 4px 16px rgba(0, 62, 81, 0.08);
+	transform: translateY(-2px);
+}
+.lc-featured-news__card .wp-block-post-featured-image img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 6px;
+	object-fit: cover;
+}
+.lc-featured-news .wp-block-post-template > li:first-child .wp-block-post-title {
+	font-size: var(--wp--preset--font-size--xl);
+}
+.lc-featured-news__card .wp-block-post-date {
+	color: var(--wp--preset--color--muted);
+	margin: 0;
+}
+.lc-featured-news__card .wp-block-post-title {
+	margin: 0;
+}
+.lc-featured-news__card .wp-block-post-title a {
+	color: var(--wp--preset--color--ink);
+	text-decoration: none;
+}
+.lc-featured-news__card .wp-block-post-title a:hover,
+.lc-featured-news__card .wp-block-post-title a:focus-visible {
+	color: var(--wp--preset--color--primary);
+	text-decoration: underline;
+}
+.lc-featured-news__card .wp-block-post-excerpt {
+	margin: 0;
+	color: var(--wp--preset--color--ink);
+}
+.lc-featured-news__card .wp-block-post-excerpt__more-link {
+	color: var(--wp--preset--color--primary);
+	font-weight: 600;
+	margin-top: var(--wp--preset--spacing--20);
+	display: inline-block;
+}
+@media (max-width: 781px) {
+	.lc-featured-news .wp-block-post-template {
+		grid-template-columns: 1fr;
+	}
+	.lc-featured-news .wp-block-post-template > li:first-child {
+		grid-row: auto;
+	}
+}
+
+/* =========================================================================
  * Reduced-motion respect
  * Every animation/transition above must collapse to instant when the user
  * has expressed a reduced-motion preference.
@@ -724,6 +824,7 @@ body {
 	.lc-feature-grid__card,
 	.lc-partner-logos__logo img,
 	.lc-news-card,
+	.lc-featured-news__card,
 	.lc-comparison__details,
 	.lc-comparison__details > summary::after,
 	.lc-button {
