@@ -408,3 +408,171 @@ body {
 		flex-basis: 100%;
 	}
 }
+
+/* =========================================================================
+ * Pattern: livingclassroom/feature-grid
+ * ====================================================================== */
+.lc-feature-grid__card {
+	padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--30);
+	transition: transform 200ms ease-out;
+}
+.lc-feature-grid__card .lc-feature-grid__icon {
+	color: var(--wp--preset--color--primary);
+	margin-bottom: var(--wp--preset--spacing--30);
+	display: block;
+}
+.lc-feature-grid__title {
+	margin-top: 0;
+	margin-bottom: var(--wp--preset--spacing--20);
+}
+.lc-feature-grid__body {
+	margin: 0;
+	color: var(--wp--preset--color--ink);
+}
+/* Tighter 4-up grid at wide widths; stack at small */
+@media (min-width: 1024px) {
+	.lc-feature-grid.wp-block-columns {
+		gap: var(--wp--preset--spacing--50);
+	}
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/process-steps
+ * ====================================================================== */
+.lc-process-steps__step {
+	position: relative;
+}
+.lc-process-steps__num {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	background: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--anchor);
+	font-weight: 700;
+	margin: 0 0 var(--wp--preset--spacing--30) 0;
+	line-height: 1;
+}
+.lc-process-steps__num span[aria-hidden="true"] {
+	display: block;
+}
+.lc-process-steps__title {
+	margin-top: 0;
+	margin-bottom: var(--wp--preset--spacing--20);
+}
+/* Subtle horizontal connector between steps on desktop */
+@media (min-width: 782px) {
+	.lc-process-steps .wp-block-column + .wp-block-column .lc-process-steps__num::before {
+		content: "";
+		position: absolute;
+		top: 1.25rem; /* centerline of 2.5rem circle */
+		left: calc(-1 * var(--wp--preset--spacing--50));
+		width: var(--wp--preset--spacing--50);
+		height: 2px;
+		background: var(--wp--preset--color--secondary-40);
+	}
+	.lc-process-steps__step {
+		/* allow the connector pseudo to extend outside the column padding */
+	}
+}
+
+/* Screen-reader-only utility (used by process-steps for "Step N of 4:") */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/stats-row
+ * ====================================================================== */
+.lc-stats-row__stat {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--wp--preset--spacing--20);
+}
+.lc-stats-row__num {
+	margin: 0;
+}
+.lc-stats-row__label {
+	margin: 0;
+	max-width: 12rem;
+	color: rgba(255, 255, 255, 0.92);
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/testimonial-card
+ * ====================================================================== */
+.lc-testimonial__quote {
+	margin: 0 0 var(--wp--preset--spacing--40) 0;
+	padding-left: 0;
+	border-left: 0;
+}
+.lc-testimonial__quote p {
+	margin: 0;
+	color: var(--wp--preset--color--ink);
+}
+.lc-testimonial__attribution .wp-block-column {
+	flex-grow: 0;
+}
+.lc-testimonial__avatar img {
+	background: var(--wp--preset--color--primary-10);
+}
+.lc-testimonial__name,
+.lc-testimonial__role {
+	margin: 0;
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/partner-logos
+ * ====================================================================== */
+.lc-partner-logos__logo img {
+	max-height: 80px;
+	width: auto;
+	margin: 0 auto;
+	filter: grayscale(100%);
+	opacity: 0.78;
+	transition: filter 200ms ease-out, opacity 200ms ease-out;
+}
+.lc-partner-logos__logo:hover img,
+.lc-partner-logos__logo:focus-within img {
+	filter: grayscale(0);
+	opacity: 1;
+}
+.lc-partner-logos__col {
+	display: flex;
+	justify-content: center;
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/cta-card
+ * ====================================================================== */
+.lc-cta-card {
+	box-shadow: 0 1px 0 0 var(--wp--preset--color--secondary-20);
+}
+.lc-cta-card .wp-block-buttons {
+	margin-top: var(--wp--preset--spacing--40);
+}
+
+/* =========================================================================
+ * Reduced-motion respect
+ * Every animation/transition above must collapse to instant when the user
+ * has expressed a reduced-motion preference.
+ * ====================================================================== */
+@media (prefers-reduced-motion: reduce) {
+	.lc-feature-grid__card,
+	.lc-partner-logos__logo img,
+	.lc-button {
+		transition: none !important;
+	}
+}
