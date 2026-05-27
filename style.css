@@ -565,6 +565,143 @@ body {
 }
 
 /* =========================================================================
+ * Pattern: livingclassroom/hero-side-image
+ * ====================================================================== */
+.lc-hero-side {
+	margin-top: 0;
+}
+.lc-hero-side__image img {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
+	aspect-ratio: 4 / 3;
+}
+/* Mobile: image first (above text) if its alt indicates narrative content */
+@media (max-width: 781px) {
+	.lc-hero-side .wp-block-columns {
+		flex-direction: column;
+	}
+	.lc-hero-side__text,
+	.lc-hero-side__media {
+		flex-basis: 100% !important;
+		width: 100% !important;
+	}
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/comparison-sections
+ * ====================================================================== */
+.lc-comparison__column {
+	display: flex;
+}
+.lc-comparison__details {
+	width: 100%;
+	border: 1px solid var(--wp--preset--color--primary-20);
+	border-radius: 8px;
+	padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--40);
+	background: var(--wp--preset--color--surface);
+	transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
+}
+.lc-comparison__details[open] {
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 2px 0 0 var(--wp--preset--color--primary-20);
+}
+.lc-comparison__details > summary {
+	cursor: pointer;
+	font-weight: 700;
+	font-size: var(--wp--preset--font-size--lg);
+	color: var(--wp--preset--color--ink);
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--wp--preset--spacing--20);
+}
+.lc-comparison__details > summary::-webkit-details-marker {
+	display: none;
+}
+.lc-comparison__details > summary::after {
+	content: "+";
+	font-size: 1.25rem;
+	font-weight: 400;
+	color: var(--wp--preset--color--primary);
+	flex: 0 0 auto;
+	transition: transform 150ms ease-out;
+}
+.lc-comparison__details[open] > summary::after {
+	content: "−";
+}
+.lc-comparison__details > *:not(summary) {
+	margin-top: var(--wp--preset--spacing--30);
+}
+.lc-comparison__link {
+	color: var(--wp--preset--color--primary);
+	font-weight: 600;
+	text-decoration: none;
+}
+.lc-comparison__link:hover,
+.lc-comparison__link:focus-visible {
+	text-decoration: underline;
+}
+
+/* =========================================================================
+ * Pattern: livingclassroom/news-grid
+ * ====================================================================== */
+.lc-news-grid .wp-block-post-template {
+	gap: var(--wp--preset--spacing--50);
+}
+.lc-news-card {
+	background: var(--wp--preset--color--surface);
+	transition: box-shadow 200ms ease-out, transform 200ms ease-out;
+	height: 100%;
+}
+.lc-news-card:hover,
+.lc-news-card:focus-within {
+	box-shadow: 0 4px 16px rgba(0, 62, 81, 0.08);
+	transform: translateY(-2px);
+}
+.lc-news-card .wp-block-post-featured-image img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 6px;
+}
+.lc-news-card .wp-block-post-date {
+	color: var(--wp--preset--color--muted);
+	margin: 0;
+}
+.lc-news-card .wp-block-post-title {
+	margin: 0;
+}
+.lc-news-card .wp-block-post-title a {
+	color: var(--wp--preset--color--ink);
+	text-decoration: none;
+}
+.lc-news-card .wp-block-post-title a:hover,
+.lc-news-card .wp-block-post-title a:focus-visible {
+	color: var(--wp--preset--color--primary);
+	text-decoration: underline;
+}
+.lc-news-card .wp-block-post-excerpt {
+	margin: 0;
+	color: var(--wp--preset--color--ink);
+}
+.lc-news-card .wp-block-post-excerpt__more-text,
+.lc-news-card .wp-block-post-excerpt__more-link {
+	color: var(--wp--preset--color--primary);
+	font-weight: 600;
+	margin-top: var(--wp--preset--spacing--20);
+	display: inline-block;
+}
+.lc-news-grid .wp-block-query-pagination {
+	gap: var(--wp--preset--spacing--30);
+}
+.lc-news-grid .wp-block-query-pagination a {
+	color: var(--wp--preset--color--primary);
+}
+
+/* =========================================================================
  * Reduced-motion respect
  * Every animation/transition above must collapse to instant when the user
  * has expressed a reduced-motion preference.
@@ -572,6 +709,9 @@ body {
 @media (prefers-reduced-motion: reduce) {
 	.lc-feature-grid__card,
 	.lc-partner-logos__logo img,
+	.lc-news-card,
+	.lc-comparison__details,
+	.lc-comparison__details > summary::after,
 	.lc-button {
 		transition: none !important;
 	}
